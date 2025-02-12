@@ -188,6 +188,130 @@ Common Node.js Examples:
    - Database connections
    - Configuration objects
 
+## Error Handling in Node.js
+
+1. Types of Errors
+   - Operational Errors:
+     * Network failures
+     * Database connection issues
+     * Invalid user input
+     * Request timeouts
+     * Rate limiting
+     * File system errors
+   
+   - Programming Errors:
+     * Null references
+     * Undefined method calls
+     * Type errors
+     * Syntax errors
+     * Memory leaks
+
+2. Error Handling Patterns
+
+   A. Promise Chain Handling:
+      - Using .catch() at the end of promise chains
+      - Implementing error recovery and fallback strategies
+      - Proper propagation of errors up the chain
+      - Error transformation at appropriate levels
+
+   B. Async/Await Pattern:
+      - try/catch blocks around await statements
+      - Error aggregation for multiple async operations
+      - Graceful degradation when sub-operations fail
+      - Maintaining partial success states
+
+   C. Event Emitter Pattern:
+      - 'error' event listeners on EventEmitter instances
+      - Uncaught exception handling with process.on('uncaughtException')
+      - Unhandled rejection handling with process.on('unhandledRejection')
+      - Proper error event propagation in custom events
+
+   D. Express.js Error Middleware:
+      - Centralized error handling middleware
+      - Status code mapping
+      - Error normalization
+      - Environment-specific error responses (dev vs prod)
+
+3. Best Practices
+
+   A. Error Classification:
+      - Creating custom error classes for different scenarios
+      - Meaningful error messages and codes
+      - Including relevant context in errors
+      - Proper error hierarchies
+
+   B. Logging Strategy:
+      - Different log levels (error, warn, info)
+      - Structured logging with context
+      - Stack trace preservation
+      - Sensitive data filtering
+
+   C. Recovery Mechanisms:
+      - Retrying failed operations (with backoff)
+      - Fallback options for critical operations
+      - Circuit breaker pattern for external services
+      - Graceful service degradation
+
+   D. Error Response Structure:
+      - Consistent error response format
+      - Appropriate status codes
+      - User-friendly messages
+      - Debug information in development
+
+4. Advanced Patterns
+
+   A. Domain-Specific Error Handling:
+      - Business logic errors vs technical errors
+      - Error translation between layers
+      - Context preservation across boundaries
+      - Error aggregation and summarization
+
+   B. Distributed System Errors:
+      - Microservice communication errors
+      - Timeout handling
+      - Partial failure scenarios
+      - Cascading failure prevention
+
+   C. Transaction Error Handling:
+      - Rollback mechanisms
+      - Compensation actions
+      - Saga pattern for distributed transactions
+      - Idempotency handling
+
+5. Monitoring and Debugging
+
+   A. Error Tracking:
+      - Error rate monitoring
+      - Error pattern analysis
+      - Impact assessment
+      - Root cause identification
+
+   B. Error Reporting:
+      - Integration with error tracking services
+      - Alert thresholds and notifications
+      - Error categorization and prioritization
+      - Team notification strategies
+
+Common Pitfalls to Avoid:
+1. Swallowing errors silently
+2. Improper error propagation
+3. Missing error handling in async operations
+4. Inconsistent error formats
+5. Exposing sensitive information in errors
+6. Not logging enough context
+7. Using generic error messages
+8. Missing retry mechanisms for transient failures
+
+Impact of Good Error Handling:
+1. Improved system reliability
+2. Better debugging capabilities
+3. Enhanced user experience
+4. Reduced downtime
+5. Faster incident resolution
+6. Better system observability
+7. Easier maintenance
+8. More robust applications
+
 ## Databases
 
 ### CAP Theorem

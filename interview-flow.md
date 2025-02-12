@@ -134,7 +134,7 @@ Look for these key points in their solution:
 - Proper use of next()
 - Handling response events
 - Timing accuracy consideration
-- Error handling awareness **[@ref: Design Patterns in Node.js]**
+- Error handling awareness **[@ref: Error Handling in Node.js]**
 
 - This shows practical coding skills and understanding of async concepts
 
