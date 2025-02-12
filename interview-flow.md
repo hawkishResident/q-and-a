@@ -160,6 +160,8 @@ Look for these key points in their solution:
 **[@ref: Containerization]**
 - Docker and K8s experience
 **[@ref: Container Orchestration]**
+- "Could you explain GitOps and its principles?"
+**[@ref: GitOps]**
 - Scaling strategies **[@ref: Strategies]**
 - Brief AWS services discussion
 **[@ref: AWS Services with K8s]**

@@ -403,6 +403,70 @@ Kubernetes features:
 - Config management (external configuration)
 - Secret management (secure sensitive data)
 
+## DevOps & Deployment
+
+### GitOps
+- Definition: Infrastructure as Code (IaC) and DevOps best practices using Git as single source of truth
+- Core Principles:
+  - Declarative: Infrastructure/application state described declaratively
+  - Version Controlled: All changes tracked in Git
+  - Automated: Changes automatically applied to infrastructure
+  - Self-healing: System reconciles actual state with desired state
+
+Implementation:
+1. Repository Structure:
+   - Infrastructure repo (Kubernetes manifests, Terraform)
+   - Application repo (source code)
+   - Configuration repo (environment configs)
+
+2. Key Components:
+   - Git repository (source of truth)
+   - GitOps operator (e.g., Flux, ArgoCD)
+   - Kubernetes cluster
+   - CI pipeline for application builds
+
+3. Workflow:
+   - Developer commits code
+   - CI builds and tests
+   - New image tagged and pushed
+   - Infrastructure repo updated
+   - GitOps operator detects and applies changes
+
+Benefits:
+- Improved security (no direct cluster access)
+- Audit trail and compliance
+- Easier rollbacks
+- Consistent deployments
+- Disaster recovery
+
+Common Tools:
+1. Flux:
+   - Native GitOps tool for Kubernetes
+   - Multi-tenancy support
+   - Built-in image automation
+   - Supports Helm and Kustomize
+
+2. ArgoCD:
+   - UI dashboard
+   - Multi-cluster management
+   - SSO integration
+   - Application rollback capabilities
+
+Best Practices:
+- Separate application and configuration
+- Use semantic versioning
+- Implement proper access controls
+- Regular security scanning
+- Maintain clear documentation
+- Use immutable tags for images
+
+Challenges:
+- Initial setup complexity
+- Team adoption and training
+- Managing secrets
+- Handling multiple environments
+- Configuration drift resolution
+
 ## Network Protocols
 
 ### TLS Working
