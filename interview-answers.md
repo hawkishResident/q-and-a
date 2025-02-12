@@ -407,44 +407,77 @@ UDP Use cases:
 ## Scaling
 
 ### Strategies
-1. Vertical Scaling:
-   - Add more resources
-   - CPU, RAM upgrades
-   - Limited by hardware
+1. Vertical Scaling (Scale Up):
+   - Adding more power to existing machine (CPU, RAM, SSD)
+   - Easier to implement, but has hardware limits
+   - More expensive with diminishing returns
+   - No application architecture changes needed
+   - Single point of failure remains
 
-2. Horizontal Scaling:
-   - Add more instances
-   - Load balancing required
-   - Better fault tolerance
+2. Horizontal Scaling (Scale Out):
+   - Adding more machines to handle load
+   - More complex to implement but virtually unlimited
+   - Cost-effective (can use commodity hardware)
+   - Requires load balancing and distributed architecture
+   - Better fault tolerance through redundancy
 
 3. Database Scaling:
-   - Read replicas
-   - Sharding
-   - Partitioning
+   - Read Replicas: Copies of main database for read operations only, master handles writes
+   - Sharding: Splitting data across multiple databases based on a key (e.g., user_id, region)
+   - Partitioning: Breaking single large table into smaller ones based on logical divisions (e.g., by date, category)
 
 ## Message Queues
 
 ### RabbitMQ vs Kafka
+
 RabbitMQ:
-- Traditional message queue
-- Point-to-point
-- Request/reply patterns
-- Complex routing
+- Traditional message broker for point-to-point communication
+- Smart broker, dumb consumer model
+- Messages are deleted after consumption
+- Good for: task queues, request/reply, pub/sub patterns
+- Complex routing capabilities (exchanges, bindings)
+- Guaranteed message delivery
+- Lower latency, lower throughput
 
 Kafka:
-- Distributed streaming
-- Higher throughput
-- Better for analytics
-- Long-term storage
+- Distributed streaming platform
+- Dumb broker, smart consumer model
+- Messages persist for configured time
+- Good for: log aggregation, event sourcing, stream processing
+- Simple routing (topics only)
+- At-least-once delivery
+- Higher latency, higher throughput
 
 ## Big O Notation
 
-### Common Complexities
-- O(1): Constant time
-- O(log n): Binary search
-- O(n): Linear search
-- O(n log n): Efficient sorting
-- O(n²): Nested loops
-- O(2^n): Recursive fibonacci
+Big O Notation is a mathematical notation that describes the performance or complexity of an algorithm:
+- Describes upper bound of growth rate of an algorithm
+- Shows how runtime/space requirements grow as input size grows
+- Helps compare algorithm efficiency at scale
+- Always considers worst-case scenario
+- Ignores constants and smaller terms (O(2n) becomes O(n))
 
-Nested loop complexity = O(n * m) where n, m are loop sizes
+### Common Complexities
+- O(1): Constant time - operation always takes same time regardless of input size (array access, hash map lookup)
+- O(log n): Logarithmic - input size is repeatedly divided (binary search, balanced tree operations)
+- O(n): Linear - time grows linearly with input (simple loop, array search)
+- O(n log n): Log Linear - common in efficient sorting (quicksort, mergesort)
+- O(n²): Quadratic - nested iterations (bubble sort, insertion sort)
+- O(2^n): Exponential - doubles with each addition to input (recursive fibonacci, subset generation)
+
+Nested loop = O(n * m) where n, m are loop sizes - means outer loop runs n times, inner loop runs m times for each outer iteration
+
+Common Example:
+```javascript
+// O(n) - linear time
+for(let i = 0; i < n; i++) {
+    console.log(i);
+}
+
+// O(n²) - quadratic time
+for(let i = 0; i < n; i++) {
+    for(let j = 0; j < n; j++) {
+        console.log(i, j);
+    }
+}
+```
