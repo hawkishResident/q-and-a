@@ -194,6 +194,56 @@ Common Node.js Examples:
 
 ## Databases
 
+### CAP Theorem
+- States that a distributed system can only provide two of three guarantees:
+  - Consistency: All nodes see the same data at the same time
+  - Availability: Every request receives a response
+  - Partition tolerance: System continues to operate despite network failures
+- Real-world applications:
+  - MongoDB: CP (Consistency/Partition Tolerance) in default configuration
+  - Cassandra: AP (Availability/Partition Tolerance)
+  - PostgreSQL: CA (Consistency/Availability) in single node, CP in distributed setup
+
+### Database Indexing
+Definition:
+- Data structure that improves the speed of data retrieval operations
+- Trade-off between read and write performance
+- Consumes additional storage space
+
+Types of Indexes:
+1. Single Column Index
+   - Basic index on one column
+   - Good for unique constraints
+   - Example: Primary key index
+
+2. Composite Index
+   - Multiple columns in specific order
+   - Order matters for query optimization
+   - Best for frequently combined columns
+
+3. Partial Index
+   - Index subset of rows
+   - Reduces index size
+   - Good for filtered queries
+
+Impact on Operations:
+- Improves:
+  - SELECT query performance
+  - JOIN operations
+  - ORDER BY operations
+  - GROUP BY operations
+- Slows down:
+  - INSERT operations
+  - UPDATE operations
+  - DELETE operations
+
+Best Practices:
+- Index frequently queried columns
+- Avoid over-indexing (impacts write performance)
+- Consider column cardinality
+- Regular index maintenance
+- Monitor index usage
+
 ### MongoDB vs PostgreSQL
 MongoDB:
 - Schema-less
@@ -203,7 +253,7 @@ MongoDB:
 - Better for data with varying structure
 
 PostgreSQL:
-- ACID compliance (**NOTE:** Atomicity: all or nothing transactions, Consistency: data integrity rules, Isolation: concurrent transaction handling, Durability: committed data is saved) TODO: cap theorem, what's index and what it impacts
+- ACID compliance (**NOTE:** Atomicity: all or nothing transactions, Consistency: data integrity rules, Isolation: concurrent transaction handling, Durability: committed data is saved)
 - Complex queries/joins
 - Structured data/flat data
 - Better for relational data
