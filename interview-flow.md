@@ -140,6 +140,8 @@ Look for these key points in their solution:
 ### 2. Database and Architecture
 "What's your experience with databases? Could you compare MongoDB and PostgreSQL?"
 - Quick Redis discussion if they have experience
+- "Can you explain the CAP theorem and how it applies to different databases?"
+- "What role do indexes play in database performance?"
 - Natural transition to architecture: "How did you handle communication between services?"
 - If they mention message queues, briefly discuss RabbitMQ/Kafka
 
