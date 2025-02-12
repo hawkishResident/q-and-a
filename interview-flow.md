@@ -5,8 +5,11 @@ Start with core technical assessment to quickly gauge expertise level.
 
 ### 1. Node.js and Express.js Core
 "Could you explain what Node.js is and a bit about the event loop?"
+**[@ref: What is Node.js]**
+**[@ref: Event Loop, Micro/Macro Tasks]**
 - Quick follow-up about micro/macro tasks if they show strong knowledge
-- Transition: "Talking about Node.js, could you implement a middleware in Express that calculates request processing time?"
+- Transition: "Talking about Node.js, could you implement a middleware in Express that calculates request processing time?"**[@ref: What is Middleware]**
+
 Here are several approaches to implementing request time middleware, from basic to advanced:
 
 1. Two-Middleware Solution (Shows better design understanding):
@@ -131,7 +134,7 @@ Look for these key points in their solution:
 - Proper use of next()
 - Handling response events
 - Timing accuracy consideration
-- Error handling awareness
+- Error handling awareness **[@ref: Design Patterns in Node.js]**
 
 - This shows practical coding skills and understanding of async concepts
 
@@ -139,31 +142,43 @@ Look for these key points in their solution:
 
 ### 2. Database and Architecture
 "What's your experience with databases? Could you compare MongoDB and PostgreSQL?"
-- Quick Redis discussion if they have experience
+**[@ref: MongoDB vs PostgreSQL]**
+- Quick Redis discussion if they have experience, power off scenario
+**[@ref: Redis]**
 - "Can you explain the CAP theorem and how it applies to different databases?"
+**[@ref: CAP Theorem]**
 - "What role do indexes play in database performance?"
+**[@ref: Database Indexing]**
 - Natural transition to architecture: "How did you handle communication between services?"
+**[@ref: Microservices vs Monolith]**
 - If they mention message queues, briefly discuss RabbitMQ/Kafka
+**[@ref: RabbitMQ vs Kafka]**
 
 ### 3. Containerization and Deployment
 "How do you typically deploy your Node.js applications?"
+**[@ref: What is Docker]**
+**[@ref: Containerization]**
 - Docker and K8s experience
+**[@ref: Container Orchestration]**
+- Scaling strategies **[@ref: Strategies]**
 - Brief AWS services discussion
-- CI/CD pipeline overview
+**[@ref: AWS Services with K8s]**
+- CI/CD/CD pipeline overview
+**[@ref: CI/CD/CD]**
 
 ## Closing Section (10 minutes)
 
-### 4. System Design or Technical Achievement
+### 4. System Design AND Technical Achievement
 Choose either:
 - Your prepared system design question about async communication
-OR
+AND
 - "Tell me about a technical achievement you're proud of"
+
 
 ### 5. Quick Technical Deep-Dive (if time permits)
 Based on their previous answers, choose one:
-- Big O notation and complexity
-- TLS and networking
-- Scaling strategies
+- Big O notation and complexity **[@ref: Common Complexities]**
+- TLS and networking **[@ref: TLS Working]**
 
 ## Time Management Tips
 - Opening (Node.js + Express): 10 minutes
