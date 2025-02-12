@@ -158,22 +158,18 @@ Important Notes:
 
 Types of Patterns:
 1. Creational Patterns:
-   - Factory: Creating objects without specifying exact class
+   - Factory: Creating different database connections (MongoDB, PostgreSQL) using same interface
    - Singleton: Single instance for database connections
-   - Builder: Complex object construction
-   - Prototype: Cloning existing objects
+   - Builder: Complex query builder
 
 2. Structural Patterns:
-   - Adapter: Interface compatibility
-   - Facade: Simplified interface
-   - Proxy: Control access to objects
-   - Decorator: Dynamic functionality addition
+   - Adapter: Converting third-party API responses to standard format
+   - Proxy: Rate limiting or caching layer
 
 3. Behavioral Patterns:
    - Observer: Event handling in Node.js
-   - Strategy: Switchable algorithms
+   - Strategy: Passport npm module
    - Chain of Responsibility: Middleware in Express
-   - Command: Encapsulate operations
 
 Common Node.js Examples:
 1. Middleware Pattern (Chain of Responsibility)
